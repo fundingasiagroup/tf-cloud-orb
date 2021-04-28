@@ -1,0 +1,15 @@
+description: Update Terraform Cloud Workspace varable
+usage:
+  version: 2.1
+  orbs:
+    tf-cloud: fundingasiagroup/tf-cloud@dev:alpha
+  workflows:
+    tf-var-update:
+      jobs:
+        - tf-cloud/update-var:
+            org-name: example-org
+            workspace-name: example-workspace
+            token: example-token
+            variable-name: example-variable-name
+            variable-value: example-variable-value
+            context: tf-cloud
