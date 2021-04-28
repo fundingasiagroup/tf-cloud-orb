@@ -1,11 +1,10 @@
 description: >
-  This is a sample executor using Docker and Node.
+  Simple Docker based Terraform executor.
 docker:
-  - image: 'cimg/node:<<parameters.tag>>'
+  - image: '<< parameters.image >>'
+
 parameters:
-  tag:
-    default: lts
-    description: >
-      Pick a specific circleci/node image variant:
-      https://hub.docker.com/r/cimg/node/tags
+  image:
+    description: Specify Docker image for executor
     type: string
+    default: hashicorp/terraform:0.14.10
