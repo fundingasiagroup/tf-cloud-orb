@@ -13,4 +13,3 @@ usage:
             variable-name: example-variable-name
             variable-value: example-variable-value
             context: tf-cloud
-
