@@ -1,24 +1,13 @@
-description: Update Terraform Cloud Workspace varable
+description: >
+  Sample example description.
+# Provide a use-case based example for using this orb.
+# Everything in the `usage` section will be displayed in the orb registry.
+# Comments are not retained.
 usage:
-  version: x.y
+  version: 2.1
   orbs:
-    <orb-name>: fundingasiagroup/tf-cloud@x.y
-  jobs:
-    tf-var-update-example:
-      executor: tf-cloud/default
-      steps:
-        - checkout
-        - tf-cloud/update-var:
-            org-name: example-org
-            workspace-name: example-workspace
-            token: example-token
-            variable-name: example-variable-name
-            variable-value: example-variable-value
-        - run: echo "Run your code here"
-
-    workflows:
-      tf-var-update:
-        jobs:
-          - tf-var-update-example:
-              context: tf
-
+    <orb-name>: <namespace>/<orb-name>@1.2.3
+  workflows:
+    use-my-orb:
+      jobs:
+        - <orb-name>/<job-name>
