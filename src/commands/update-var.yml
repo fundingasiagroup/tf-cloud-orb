@@ -2,29 +2,29 @@ description: |
   This command updates variable values in a particular Terraform Cloud Organisation Workspace
 
 parameters:
-  org_name:
+  org-name:
     type: string
     description: "Terraform Cloud organisation name"
-  workspace_name:
+  workspace-name:
     type: string
     description: "Terraform Cloud workspace name where the variable to be updated"
   token:
     type: string
     description: "API token to be used for invoking the TF CLoud apis"
-  variable_name:
+  variable-name:
     type: string
     description: "Name of the variable to be updated"
-  variable_value:
+  variable-value:
     type: string
     description: "Value of the variable to be updated to"
 
 steps:
   - run:
       environment:
-        TF_ORG_NAME: <<parameters.org_name>>
-        TF_WORKSPACE_NAME: <<parameters.workspace_name>>
+        TF_ORG_NAME: <<parameters.org-name>>
+        TF_WORKSPACE_NAME: <<parameters.workspace-name>>
         TF_TOKEN: <<parameters.token>>
-        TF_VARIABLE_NAME: <<parameters.variable_name>>
-        TF_VARIABLE_VALUE: <<parameters.variable_value>>
-      name: terraform cloud workspace variable value update
+        TF_VARIABLE_NAME: <<parameters.variable-name>>
+        TF_VARIABLE_VALUE: <<parameters.variable-value>>
+      name: Update terraform cloud workspace variable
       command: <<include(scripts/update-var.sh)>>
