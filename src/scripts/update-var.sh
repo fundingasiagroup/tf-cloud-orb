@@ -44,6 +44,11 @@ CheckEnvVars(){
   fi
 }
 
+PrintVars(){
+  echo "$TF_ORG_NAME - $TF_WORKSPACE_NAME - $TF_VARIABLE_NAME - $TF_VARIABLE_VALUE - $TF_TOKEN"
+}
+
 CheckEnvVars
+PrintVars
 GetVariableId
 UpdateVariable
