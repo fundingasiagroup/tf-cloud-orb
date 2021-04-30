@@ -9,13 +9,13 @@ parameters:
     type: string
     description: "Terraform Cloud workspace name where the variable to be updated"
   token:
-    type: string
+    type: env_var_name
     description: "API token to be used for invoking the TF CLoud apis"
   variable-name:
     type: string
     description: "Name of the variable to be updated"
   variable-value:
-    type: string
+    type: env_var_name
     description: "Value of the variable to be updated to"
 
 steps:
