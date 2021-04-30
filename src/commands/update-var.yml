@@ -23,8 +23,8 @@ steps:
       command: |
         echo "parameter.token - "<<parameters.token>>
         echo "parameter.variable-value - "<<parameters.variable-value>>
-        TF_TOKEN_ENV=$(eval echo <<parameters.token>>)
-        TF_VARIABLE_VALUE_ENV=$(eval echo <<parameters.variable-value>>)
+        TF_TOKEN_ENV=$(eval echo "\$<<parameters.token>>")
+        TF_VARIABLE_VALUE_ENV=$(eval echo "\$<<parameters.token>>")
         echo "TF_TOKEN_ENV - "$TF_TOKEN_ENV
         echo "TF_VARIABLE_VALUE_ENV - "$TF_VARIABLE_VALUE_ENV
   - run:
