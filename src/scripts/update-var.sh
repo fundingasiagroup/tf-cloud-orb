@@ -50,7 +50,7 @@ PrintVars(){
 TF_TOKEN=$(eval echo "\$$TF_TOKEN")
 TF_VARIABLE_VALUE=$(eval echo "\$$TF_VARIABLE_VALUE")
 
-#CheckEnvVars
-PrintVars
+# CheckEnvVars
+# PrintVars
 GetVariableId
 UpdateVariable
