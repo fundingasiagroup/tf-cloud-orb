@@ -19,9 +19,9 @@ UpdateVariable(){
         "key":"'$TF_VARIABLE_NAME'",
         "value":"'$TF_VARIABLE_VALUE'",
         "description": "'$TF_VARIABLE_NAME'",
-        "category":"terraform",
-        "hcl": false,
-        "sensitive": false
+        "category":"'$TF_VARIABLE_CATEGORY'",
+        "hcl": "'$TF_VARIABLE_HCL'",
+        "sensitive": "'$TF_VARIABLE_SENSITIVE'",
       },
       "type":"vars"
     }
@@ -38,14 +38,14 @@ UpdateVariable(){
 }
 
 CheckEnvVars(){
-  if [[ -z $TF_ORG_NAME || -z $TF_WORKSPACE_NAME || -z $TF_TOKEN || -z $TF_VARIABLE_NAME || -z $TF_VARIABLE_VALUE ]]; then
-    echo 'one or more required variables (TF_ORG_NAME, TF_WORKSPACE_NAME, TF_TOKEN, TF_VARIABLE_NAME, TF_VARIABLE_VALUE ) are undefined'
+  if [[ -z $TF_ORG_NAME || -z $TF_WORKSPACE_NAME || -z $TF_TOKEN || -z $TF_VARIABLE_NAME || -z $TF_VARIABLE_VALUE || -z $TF_VARIABLE_CATEGORY ||  -z $TF_VARIABLE_HCL || -z $TF_VARIABLE_SENSITIVE ]]; then
+    echo 'one or more required variables (TF_ORG_NAME, TF_WORKSPACE_NAME, TF_TOKEN, TF_VARIABLE_NAME, TF_VARIABLE_VALUE, TF_VARIABLE_CATEGORY, TF_VARIABLE_HCL, TF_VARIABLE_SENSITIVE ) are undefined'
     exit 1
   fi
 }
 
 PrintVars(){
-  echo "$TF_ORG_NAME - $TF_WORKSPACE_NAME - $TF_VARIABLE_NAME - $TF_VARIABLE_VALUE - $TF_TOKEN"
+  echo "$TF_ORG_NAME - $TF_WORKSPACE_NAME - $TF_VARIABLE_NAME - $TF_VARIABLE_VALUE - $TF_TOKEN - $TF_VARIABLE_CATEGORY - $TF_VARIABLE_HCL - $TF_VARIABLE_SENSITIVE"
 }
 TF_TOKEN=$(eval echo "\$$TF_TOKEN")
 TF_VARIABLE_VALUE=$(eval echo "\$$TF_VARIABLE_VALUE")
