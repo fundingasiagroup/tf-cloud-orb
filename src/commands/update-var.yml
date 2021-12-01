@@ -17,6 +17,15 @@ parameters:
   variable-value:
     type: env_var_name
     description: "Value of the variable to be updated to"
+  variable-category:
+    type: string
+    description: "Variables category (Terraform or Environment)"
+  variable-hcl:
+    type: Boolean
+    description: "HashiCorp Configuration Language as true or false"
+  variable-sensitive:
+    type: Boolean
+    description: "Environment variable is sensitive or not."
 
 steps:
   - run:
@@ -26,5 +35,8 @@ steps:
         TF_TOKEN: <<parameters.token>>
         TF_VARIABLE_NAME: <<parameters.variable-name>>
         TF_VARIABLE_VALUE: <<parameters.variable-value>>
+        TF_VARIABLE_CATEGORY: <<parameters.variable-category>>
+        TF_VARIABLE_HCL: <<parameters.variable-hcl>>
+        TF_VARIABLE_SENSITIVE: <<parameters.variable-sensitive>>
       name: Update terraform cloud workspace variable
       command: <<include(scripts/update-var.sh)>>
