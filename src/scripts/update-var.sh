@@ -20,7 +20,7 @@ UpdateVariable(){
         "value":"'$TF_VARIABLE_VALUE'",
         "description": "'$TF_VARIABLE_NAME'",
         "category":"'$TF_VARIABLE_CATEGORY'",
-        "hcl": "'$TF_VARIABLE_HCL'",,
+        "hcl": "'$TF_VARIABLE_HCL'",
         "sensitive": "'$TF_VARIABLE_SENSITIVE'",
       },
       "type":"vars"
