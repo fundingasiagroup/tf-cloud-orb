@@ -19,9 +19,9 @@ UpdateVariable(){
         "key":"'$TF_VARIABLE_NAME'",
         "value":"'$TF_VARIABLE_VALUE'",
         "description": "'$TF_VARIABLE_NAME'",
-        "category":"terraform",
-        "hcl": false,
-        "sensitive": false
+        "category":"'$TF_VARIABLE_CATEGORY'",
+        "hcl": "'$TF_VARIABLE_HCL'",,
+        "sensitive": "'$TF_VARIABLE_SENSITIVE'",
       },
       "type":"vars"
     }
