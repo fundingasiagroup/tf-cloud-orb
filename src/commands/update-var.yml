@@ -21,10 +21,10 @@ parameters:
     type: string
     description: "Variables category (Terraform or Environment)"
   variable-hcl:
-    type: Boolean
+    type: boolean
     description: "HashiCorp Configuration Language as true or false"
   variable-sensitive:
-    type: Boolean
+    type: boolean
     description: "Environment variable is sensitive or not."
 
 steps:
