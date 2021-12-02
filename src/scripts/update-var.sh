@@ -34,6 +34,7 @@ UpdateVariable(){
     --request PATCH \
     --data "$TF_VARIABLE_UPDATE_PAYLOAD" \
     "$VAR_UPDATE_URL")
+
   echo "$TF_VARIABLE_UPDATE_PAYLOAD"
   echo "$VAR_UPDATE_URL"
   echo "$VAR_UPDATE_RESPONSE"
