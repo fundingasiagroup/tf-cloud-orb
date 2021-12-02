@@ -8,7 +8,7 @@ GetVariableId(){
   "https://app.terraform.io/api/v2/vars?filter%5Borganization%5D%5Bname%5D=$TF_ORG_NAME&filter%5Bworkspace%5D%5Bname%5D=$TF_WORKSPACE_NAME" \
   | jq '.data[] | select (.attributes.key == '\"$TF_VARIABLE_NAME\"') | .id' | tr -d \")
 
-  echo "IMAGE TAG VARIABLE ID - $TF_VARIABLE_ID"
+  echo "VARIABLE ID - $TF_VARIABLE_ID"
 }
 
 UpdateVariable(){
@@ -34,6 +34,8 @@ UpdateVariable(){
     --request PATCH \
     --data "$TF_VARIABLE_UPDATE_PAYLOAD" \
     "$VAR_UPDATE_URL")
+  echo "$TF_VARIABLE_UPDATE_PAYLOAD"
+  echo "$VAR_UPDATE_URL"
   echo "$VAR_UPDATE_RESPONSE"
 }
 
