@@ -21,7 +21,7 @@ UpdateVariable(){
         "description": "'$TF_VARIABLE_NAME'",
         "category":"'$TF_VARIABLE_CATEGORY'",
         "hcl": "'$TF_VARIABLE_HCL'",
-        "sensitive": "'$TF_VARIABLE_SENSITIVE'",
+        "sensitive": "'$TF_VARIABLE_SENSITIVE'"
       },
       "type":"vars"
     }
@@ -34,9 +34,6 @@ UpdateVariable(){
     --request PATCH \
     --data "$TF_VARIABLE_UPDATE_PAYLOAD" \
     "$VAR_UPDATE_URL")
-
-  echo "$TF_VARIABLE_UPDATE_PAYLOAD"
-  echo "$VAR_UPDATE_URL"
   echo "$VAR_UPDATE_RESPONSE"
 }
 
